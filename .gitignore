@@ -9,4 +9,4 @@ App/Staging/key.plist
 # Packages/
 # Package.pins
 # Package.resolved
-# .build/
+.build/
