@@ -3,6 +3,10 @@
 
 import PackageDescription
 
+let defaultSwiftSettings: [SwiftSetting] = [
+  .unsafeFlags(["-Xfrontend", "-warn-long-function-bodies=200"]),
+]
+
 let package = Package(
     name: "MyApp",
     defaultLocalization: "ja",
@@ -39,7 +43,10 @@ let package = Package(
                 .productItem(name: "FloatingPanel", package: "FloatingPanel", condition: nil),
                 .productItem(name: "Rswift", package: "R.swift.Library", condition: nil),
                 .productItem(name: "SkeletonView", package: "SkeletonView", condition: nil),
-            ]),
+            ],
+            path: "Sources",
+            swiftSettings: defaultSwiftSettings
+        ),
         .testTarget(
             name: "MyAppTests",
             dependencies: ["MyApp"]),

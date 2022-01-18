@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9F07DEF7279635F200B8B10A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F07DEF6279635F200B8B10A /* GoogleService-Info.plist */; };
+		9F07DEFD27965F3F00B8B10A /* MyApp in Frameworks */ = {isa = PBXBuildFile; productRef = 9F07DEFC27965F3F00B8B10A /* MyApp */; };
 		9FBA61122795B55A00B5A7D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA61112795B55A00B5A7D7 /* Assets.xcassets */; };
-		9FBA61152795B55A00B5A7D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBA61142795B55A00B5A7D7 /* Preview Assets.xcassets */; };
-		9FD9CF362795C2AA0087031F /* MyApp in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD9CF352795C2AA0087031F /* MyApp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,8 +32,7 @@
 /* Begin PBXFileReference section */
 		9F07DEF6279635F200B8B10A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9FBA610A2795B55900B5A7D7 /* Production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Production.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FBA61112795B55A00B5A7D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9FBA61142795B55A00B5A7D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9FBA61112795B55A00B5A7D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Sources/Assets.xcassets; sourceTree = "<group>"; };
 		9FBA611A2795B55B00B5A7D7 /* ProductionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBA61242795B55B00B5A7D7 /* ProductionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC749AD2795BCDF00BADF49 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
@@ -45,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FD9CF362795C2AA0087031F /* MyApp in Frameworks */,
+				9F07DEFD27965F3F00B8B10A /* MyApp in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,18 +88,9 @@
 			children = (
 				9F07DEF6279635F200B8B10A /* GoogleService-Info.plist */,
 				9FBA61112795B55A00B5A7D7 /* Assets.xcassets */,
-				9FBA61132795B55A00B5A7D7 /* Preview Content */,
 				9FC749AD2795BCDF00BADF49 /* info.plist */,
 			);
 			path = iOS;
-			sourceTree = "<group>";
-		};
-		9FBA61132795B55A00B5A7D7 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				9FBA61142795B55A00B5A7D7 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		9FC749A52795BAAB00BADF49 /* Frameworks */ = {
@@ -129,7 +118,7 @@
 			);
 			name = Production;
 			packageProductDependencies = (
-				9FD9CF352795C2AA0087031F /* MyApp */,
+				9F07DEFC27965F3F00B8B10A /* MyApp */,
 			);
 			productName = Production;
 			productReference = 9FBA610A2795B55900B5A7D7 /* Production.app */;
@@ -219,7 +208,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FBA61152795B55A00B5A7D7 /* Preview Assets.xcassets in Resources */,
 				9F07DEF7279635F200B8B10A /* GoogleService-Info.plist in Resources */,
 				9FBA61122795B55A00B5A7D7 /* Assets.xcassets in Resources */,
 			);
@@ -258,7 +246,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SDKROOT=macosx TARGET_NAME=Staging PRODUCT_BUNDLE_IDENTIFIER=ohtaki.Staging swift run --package-path \"$SRCROOT/../../BuildTools\" -c release rswift generate \"$SRCROOT/../../Sources/R.generated.swift\"\n";
+			shellScript = "SDKROOT=macosx TARGET_NAME=Production PRODUCT_BUNDLE_IDENTIFIER=ohtaki.Production swift run --package-path \"$SRCROOT/../../BuildTools\" -c release rswift generate \"$SRCROOT/../../Sources/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -353,7 +341,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = iOS/info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -410,7 +398,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = iOS/info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -594,7 +582,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9FD9CF352795C2AA0087031F /* MyApp */ = {
+		9F07DEFC27965F3F00B8B10A /* MyApp */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MyApp;
 		};
